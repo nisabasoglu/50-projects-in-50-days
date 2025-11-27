@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box; /* width ve height değerine padding ve border dahil edilir. (Elemanlar taşmaz) */
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* dikeyde */
+  justify-content: flex-start; /* yatayda */
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex; /* kartlarım yan yana sıralandı (flex-direction: column  eklersem mesela sütun şeklinde sıralanır bunlar )*/
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center; /* resim o alana ortalanarak konumlandı */
+  background-repeat: no-repeat; /* resim sadece bir kez gösterilir, tekrar etmez, kalan alan boş kalır */
+  /* ------ no-repeat + background-size: cover; birlikte kullanılır, böylece div tamamen doluyor.------ */
+  height: 80vh;
+  border-radius: 3.125rem;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5; /* kaplayacağı alan */
+  margin: 0.625rem;
+  position: relative; /* h3 leri absolute yapıcağım için içerde */
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  margin: 0;
+  opacity: 0; /* active olduğunda göstericez  */
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+}
+
+@media (max-width: 30rem) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    /* .panel elemanları arasından 4. ve 5. sıradaki olanı seçer. */
+    display: none; /* son iki kartı göstermek istemiyorum mobilde */
+  }
+}
