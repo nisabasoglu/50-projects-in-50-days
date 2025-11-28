@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+:root{
+    --line-border-fill:#FFC50F;
+    --line-border-empyt: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f7fb;
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container{
+    text-align: center;
+}
+
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 1.875rem;
+    max-width: 100%;
+    width: 21.875rem;
+}
+
+.progress-container::before{ /* ::before => o elementin içine en başa eklenen sanal kutu */
+    content: ""; /* before u kullanmak istiyorsam content zorunlu */
+    background-color: var(--line-border-empyt);
+    position: absolute; 
+    top: 50%; 
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1; 
+    
+}
+
+.progress{
+    background-color: var(--line-border-fill);
+    position: absolute; /* Bu elemanı normal sayfa akışından çıkarır ve konumunu en yakın konumlandırılmış ebeveyne göre ayarlar.Artık eleman, sayfadaki diğer elemanları itmez veya onların yerini bozmaz — serbestçe konumlandırabilirsiniz. */
+    top: 50%; /* Elemanın üst kenarını parent’ın yüksekliğinin ortasına koyar. */
+    left: 0;
+    transform: translateY(-50%); /* Elemanın kendisini yukarı çekerek tam ortasına oturmasını sağlar. */
+    height: 4px;
+    width: 0%;
+    z-index: -1; /* en arkada görünmesini istediğimiz için */
+    transition: .4s ease; /* Animasyon yavaş başlar, hızlanır, sonra tekrar yavaşlar */
+}
+
+.circle{
+    background-color: white;
+    color: #999;
+    border-radius: 50%;
+    height: 1.875rem;
+    width: 1.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid var(--line-border-empyt);
+    transition: .4s ease;
+}
+
+.circle.active{
+    border-color: var(--line-border-fill);
+}
+
+.btn{
+    background-color: var(--line-border-fill);
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit; /* body’nin fontunu alır */
+    padding: 8px 1.875rem;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+
+.btn:focus{
+    outline:0;
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empyt);
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+/* 
+
+: ile başlayan şeylere pseudo-class (sözde sınıf),
+:: ile başlayanlara ise pseudo-element (sözde element) denir.
+Bunlar HTML’de olmayan ama CSS tarafından özel durumları veya sanal elemanları seçmek için kullanılır. 
+
+*/
