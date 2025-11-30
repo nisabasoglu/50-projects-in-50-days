@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rotating Navigation</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circle-container">
+        <div class="circle">
+          <button id="close">
+            <i class="fas fa-times"></i>
+            <!-- font awesome dan icon kullanırken bu şekilde yazıyoruz -->
+          </button>
+          <button id="open">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <div class="content">
+        <h1>SpongeBob SquarePants</h1>
+        <small>Neşeli Denizaltı Kahramanı</small>
+        <p>
+          SpongeBob SquarePants, Bikini Bottom’da yaşayan neşeli ve iyimser bir
+          sünger karakteridir. Krusty Krab’da çalışır ve en yakın arkadaşı
+          Patrick ile birlikte maceradan maceraya koşar.
+        </p>
+        <h3>I'm ready, I'm ready, I'm ready!</h3>
+        <img
+          src="https://i.pinimg.com/736x/01/27/aa/0127aa6eea6237b74d83ad0a629e71ce.jpg"
+          alt=""
+        />
+        <ul>
+          <li>Her zaman pozitif ve enerjik</li>
+          <li>Deniz altı maceralarına bayılır</li>
+          <li>Arkadaşlığı ve yardımseverliği ile tanınır</li>
+        </ul>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><i class="fas fa-home">Home</i></li>
+        <li><i class="fas fa-user-alt">About</i></li>
+        <li><i class="fas fa-envelope">Contact</i></li>
+      </ul>
+    </nav>
+    <script src="script.js"></script>
+  </body>
+</html>

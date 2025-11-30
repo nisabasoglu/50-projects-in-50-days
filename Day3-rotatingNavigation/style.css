@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #e6ff27;
+  color:#222;
+  overflow-x: hidden;
+  margin: 0;
+}
+.container{
+    background-color: #fafafa;
+    transform-origin: top left; /* işlemin hangi noktayı merkez alıp gerçekleşeceği */
+    transition: transform 0.5s linear; /* Transform değişimini 0.5 sn boyunca animasyonlu şekilde yapar */
+    width: 100vw;
+    min-height: 100vh;
+    /* 
+    height =>Sabit yükseklik, içerik taşabilir
+    min-height =>Minimum yükseklik, içerik büyüdükçe element de büyür 
+    */
+    padding: 3.125rem;
+}
+.container.show-nav{
+    transform:rotate(-20deg) /* negatif değer => saat yönünde */
+}
+.circle-container{
+    position: fixed;
+    /* 
+    position: fixed => Element sayfaya değil, ekranın (viewport) kendisine sabitlenir.Scroll (kaydırma) yapsan bile aynı yerde kalır.Konumlandırma için top, left, right, bottom kullanılır.Genelde menüler, bildirimler, chat butonları için kullanılır.
+    */
+    top: -6.25rem;
+    left: -6.25rem;
+}
+.circle{
+    background-color: #e6ff27;
+    height: 12.5rem;
+    width: 12.5rem;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+.container.show-nav .circle{
+    transform: rotate(-70deg);
+}
+.circle button{
+    cursor: pointer;
+    position: absolute; /* Element, en yakın position'lı (relative/absolute/fixed/sticky) ebeveyne göre konumlanır. */
+    top: 50%; /* Elementin üst kenarını, ebeveyn yüksekliğinin %50’sine taşır (dikey ortalama gibi). */
+    left: 50%; /* Elementin sol kenarını, ebeveyn genişliğinin %55’sine taşır (yatay ortalama gibi). */
+    height: 6.25rem;
+    background: transparent;
+    border: 0;
+    font-size: 1.625rem;
+    color: #fff;
+}
+.circle button:focus{
+    outline: none; /* Tarayıcıların varsayılan mavi/çizgili odak çerçevesini kaldırır. */
+}
+.circle button#open{
+    left: 60%;
+}
+.circle button#close{
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+.container.show-nav + nav li{ /* .container.show-nav elementinin hemen ardından gelen nav içindeki li öğelerini seçer */
+    transform: translateX(0); /* elementin orijinal pozisyonuna dönmesini sağlar. */
+    transition-delay: 0.3s;
+}
+nav{
+    position: fixed;
+    bottom: 2.5rem;
+    left: 0;
+    z-index: 100;
+}
+nav ul{
+    list-style-type: none;
+    padding-left: 1.875rem;
+}
+nav ul li{
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0;
+    transform: translateX(-100%); /* Elementin kendi genişliğinin tamamı kadar sola kaydırılması anlamına gelir. */ 
+    transition: transform 0.4s ease-in;
+}
+nav ul li i{
+    font-size: 1.25rem;
+    margin-right: .625rem;
+}
+nav ul li + li {
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+nav ul li + li + li{
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+
+.content{
+    max-width: 1000px;
+    margin: 50px auto;
+}
+.content img{
+    max-width: 100%;
+    border-radius: 15px;
+}
+.content small{
+    color: #555;
+    font-style: italic;
+}
+.content p{
+    color: #333;
+    line-height: 1.5;
+}
