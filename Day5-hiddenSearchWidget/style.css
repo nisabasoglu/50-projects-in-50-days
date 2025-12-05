@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #cba3ad;
+  overflow: hidden;
+  margin: 0;
+}
+
+.search{
+    position: relative;
+    height: 3.125rem;
+}
+
+.search .input{
+    background-color: white;
+    border: 0;
+    font-size: 1.125rem;
+    padding: .9375rem;
+    height: 3.125rem;
+    width: 3.125rem;
+    transition: width 0.3s ease;/* width değerinin zaman içinde yumuşak şekilde değişmesini sağlar. */
+}
+
+.btn{
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 3.125rem;
+    width: 3.125rem;
+    transition: transform 0.3s ease; /* Bu elementin transform değerleri değişirse, bu değişim 0.3 saniyede, yumuşak bir geçişle gerçekleşsin */
+}
+
+.btn:focus,
+.input:focus{
+    outline: none;
+}
+/* 
+:focus nedir?
+Bir element üzerine:tıklandığında,klavye ile seçildiğinde (Tab tuşu),içine yazı yazılabilir durumda olduğunda focus alır.
+Örnek:
+<input> tıklandığında bir mavi çerçeve çıkar → bu "outline".
+*/
+
+.search.active .input{
+    width: 12.5rem;
+}
+/* 
+.search adlı bir kapsayıcıya active class’ı eklendiğinde içindeki input ve butonun animasyonlu olarak genişlemesini sağlar
+*/
+
+.search.active .btn{
+    transform: translateX(12.375rem);
+}
+/* 
+.search aktif olduğunda İçindeki .btn butonu
+→ 12.375rem sağa doğru kaydır
+*/
