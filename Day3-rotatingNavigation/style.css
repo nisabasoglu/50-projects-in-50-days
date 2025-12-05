@@ -24,7 +24,7 @@ body {
     padding: 3.125rem;
 }
 .container.show-nav{
-    transform:rotate(-20deg) /* negatif değer => saat yönünde */
+    transform:rotate(-20deg) 
 }
 .circle-container{
     position: fixed;
@@ -91,6 +91,7 @@ nav ul li{
 nav ul li i{
     font-size: 1.25rem;
     margin-right: .625rem;
+  
 }
 nav ul li + li {
     margin-left: 15px;
