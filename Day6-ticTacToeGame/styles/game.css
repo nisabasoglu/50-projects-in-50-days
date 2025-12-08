@@ -1,0 +1,57 @@
+#active-game{
+    text-align:center;
+    margin: 2rem 0 5rem 0; /* t-r-b-l */
+}
+
+#game-over{
+    width: 90rem;
+    max-width: 40rem;  /* Büyük ekranda en fazla 40rem genişlik */ 
+    margin: auto;
+    padding: 1rem;
+    background-color: #5459AC;
+    border-radius: 4px;
+    color: white;
+    display: none;
+}
+
+#game-over h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+#active-player-name{
+    font-weight: bold;
+    color: #5459AC;
+}
+
+#game-board{
+    list-style:none;
+    margin: 1rem 0;
+    padding:0;
+    display: grid;
+    grid-template-columns: 6rem 6rem 6rem; /* repeat(3, 6rem)  şeklinde de yazabilirdik */
+    grid-template-rows: 6rem 6rem 6rem;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#game-board li{
+    background-color: #e1e2f2;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#game-board li:hover{
+    background-color:#acaed7;
+}
+
+#game-board li.disabled{
+    color: white;
+    background-color: #acaed7;
+    cursor: default;
+}
