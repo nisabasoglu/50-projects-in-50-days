@@ -28,7 +28,12 @@
   <body>
     <header id="main-header">
       <h1>Play Tic-Tac-Toe</h1>
-      <p>Built with lots of love<i class="fa-solid fa-heart" style="color: #B197FC;"></i></p>
+      <p>
+        Built with lots of love<i
+          class="fa-solid fa-heart"
+          style="color: #b197fc"
+        ></i>
+      </p>
     </header>
     <main>
       <div id="backdrop"></div>
@@ -37,10 +42,13 @@
         <form>
           <div class="form-control">
             <label for="playername">Player name</label>
-            <input type="text" name="username" id="playername" />
+            <input type="text" name="playername" id="playername" required />
           </div>
+          <p id="config-errors"></p>
           <div>
-            <button type="button" class="btn btn-alt" id="cancel-btn">Cancel</button>
+            <button type="reset" class="btn btn-alt" id="cancel-btn">
+              Cancel
+            </button>
             <button type="submit" class="btn">Confirm</button>
           </div>
         </form>
@@ -52,7 +60,13 @@
               <h2>Player 1</h2>
               <h3>PLAYER NAME</h3>
               <p class="player-symbol">X</p>
-              <button class="btn btn-alt" id="edit-player-1-btn">Edit</button>
+              <button
+                class="btn btn-alt"
+                id="edit-player-1-btn"
+                data-playerId="1"
+              >
+                Edit
+              </button>
             </article>
           </li>
           <li>
@@ -60,7 +74,15 @@
               <h2>Player 2</h2>
               <h3>PLAYER NAME</h3>
               <p class="player-symbol">O</p>
-              <button class="btn btn-alt" id="edit-player-2-btn">Edit</button>
+              <button
+                class="btn btn-alt"
+                id="edit-player-2-btn"
+                data-playerId="2" 
+              >
+                Edit
+              </button> <!-- data- => HTML elementlerine JavaScript’te kullanmak üzere veri eklemek için kullanılır.
+              HTML'de: data-player-id
+              JS'de: dataset.playerId  -->
             </article>
           </li>
         </ol>
