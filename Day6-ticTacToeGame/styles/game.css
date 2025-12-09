@@ -1,6 +1,7 @@
 #active-game{
     text-align:center;
     margin: 2rem 0 5rem 0; /* t-r-b-l */
+    /* display: none; */
 }
 
 #game-over{
@@ -47,11 +48,11 @@
 }
 
 #game-board li:hover{
-    background-color:#acaed7;
+    background-color:#393D7E;
 }
 
 #game-board li.disabled{
     color: white;
-    background-color: #acaed7;
+    background-color: #393D7E;
     cursor: default;
 }

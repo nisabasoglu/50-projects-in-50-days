@@ -1,5 +1,5 @@
 function openPlayerConfig(event){
-    const selectedPlayerId = event.target.dataset.playerId
+    editedPlayer = +event.target.dataset.playerid // string olarak geldiği için + koyup number yaptım  (+'1' => 1)
     /* eğer player-id olsaydı dataset['player-id'] olarak yazardım*/
     playerConfigOverlay.style.display = 'block'
     backdrop.style.display = 'block'
@@ -10,6 +10,7 @@ function closePlayerConfig(){
     backdrop.style.display = 'none'
     form.firstElementChild.classList.remove('error')
     configErrors.textContent =''
+    form.firstElementChild.lastElementChild.value = '' //input a ulaştım ve o formu  submitledikten sonra resetlenmesini sağladım
 }
 
 function savePlayerConfig(event){
@@ -31,7 +32,11 @@ function savePlayerConfig(event){
         return; /* burdaki return ü koymamın sebebi return ün altında kalan işlemlerin çalışmaması için */
     }
 
+    const updatedPlayerData = document.getElementById('player-' + editedPlayer + '-data')
+    updatedPlayerData.children[1].textContent = enteredPlayerName //h3 e ulaştım ve girilen ismi verdim
+    
+    players[editedPlayer - 1].name = enteredPlayerName
 
-
+    closePlayerConfig() //submite bastığımda artık kapanıyor bunu çağırdığım için
     
 }
