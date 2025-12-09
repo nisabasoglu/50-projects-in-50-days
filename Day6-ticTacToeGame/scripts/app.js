@@ -6,6 +6,8 @@ const gameData = [
 
 let editedPlayer = 0
 let activePlayer = 0
+let currentRound = 1
+let gameIsOver = false
 const players = [
     {
         name: '',
@@ -33,6 +35,8 @@ const cancelBtn = document.getElementById('cancel-btn')
 const startGame = document.getElementById('start-game-btn')
 
 const gameFields = document.querySelectorAll('#game-board li')
+
+const gameOver = document.getElementById('game-over')
 
 editPlayer1Btn.addEventListener('click', openPlayerConfig)
 editPlayer2Btn.addEventListener('click', openPlayerConfig)
