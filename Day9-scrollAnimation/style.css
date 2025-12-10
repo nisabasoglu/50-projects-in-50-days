@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff2d3;
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-shadow: 3px 0 white;
+  /* 3px sağa kaymış bir gölge oluşturur
+0px aşağı yukarı kaymaz
+Keskin gölge (blur yok)*/
+  color: #63a361;
+}
+
+.box{
+    border: 5px solid #63a361 ;
+    color: #63a361;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24rem;
+    height: 11.5rem;
+    margin: 10px;
+    border-radius: 10px;
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even){
+    transform: translateX(-400%);
+}
+
+.box.show{
+    transform: translateX(0);
+}
