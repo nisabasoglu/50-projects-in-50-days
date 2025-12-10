@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.bg {
+  background: url("https://i.pinimg.com/736x/7b/ae/d2/7baed2fb8d98141b99fb52f6175cb69d.jpg")
+    no-repeat center center/cover;
+  /* url(...) → Arkaplan resmi
+    no-repeat → Tekrarlanmasın
+    center center → Yatay ve dikey ortala / cover → Resmi alanı kaplayacak şekilde ölçekle 
+    (sadece resim url sini koycaksam backgroun-image:url() ) li kullanırım
+*/
+  position: absolute;
+  top: -30; /* tam 30px yukarı çekiyorsun */
+  left: -30; /* blur lanınca kenarlarda boşluklar oluyordu o yüzden bu ayarlamaları yaptık */
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  /* 30px yukarı taşıdım → üstte kesilmesin
+30px aşağıya fazlalık ekledim → altta kesilmesin
+---------------------------------------------
+toplam 60px ekstra yükseklik
+Bu sayede blur taşsa bile boşluk görünmez. */
+  z-index: -1;
+  filter: blur(0px); /* hiç blur yok */
+}
+
+.loading-text {
+  font-size: 3.125rem;
+  color: white;
+}
