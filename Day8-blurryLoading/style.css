@@ -21,7 +21,7 @@ body {
   /* url(...) → Arkaplan resmi
     no-repeat → Tekrarlanmasın
     center center → Yatay ve dikey ortala / cover → Resmi alanı kaplayacak şekilde ölçekle 
-    (sadece resim url sini koycaksam backgroun-image:url() ) li kullanırım
+    (sadece resim url sini koycaksam background-image:url() ) li kullanırım
 */
   position: absolute;
   top: -30; /* tam 30px yukarı çekiyorsun */
