@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f69c6e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid #434e78;
+  padding: 50px 20px;
+  text-align: center;
+  max-width: 100%;
+  width: 800px;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  /* 
+  Elementi kendi boyutunun yarısı kadar; sola (-50%), yukarı (-50%) kaydırır.Buradaki %, parent’a değil, elementin kendisine göredir (çok önemli).
+  */
+  width: clamp(80px, 20vw, 200px);
+  /* 
+  clamp(min, ideal, max)
+  Bu satır:
+    En küçük: 80px
+    İdeal: 20vw (ekranın %20’si)
+    En büyük: 200px
+  */
+  border-radius: 50%;
+  z-index: 10; /* üstte kal */
+}
+
+h3 {
+  margin: 0;
+  opacity: 0.5;
+  letter-spacing: 2px;
+}
+
+.joke {
+  font-size: 30px;
+  letter-spacing: 1px;
+  line-height: 40px;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+.btn {
+  background-color: #434e78;
+  font-size: 16px;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+
