@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #F7E396;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+#buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* bulunduğu kutuyu tamamen kaplar,taşan kısımlar kırpılır (div için background-size: cover)*/
+  border-radius: 12px;
+}
