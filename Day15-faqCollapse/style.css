@@ -52,7 +52,8 @@ h1 {
 ---------------------------------
 */
 
-.faq.active::before,    /* ikonu yerleştirdim */
+/* .faq elemanı active class’ını aldığında, elemanın önüne ve arkasına ikon yerleştirdim (::before ve ::after HTML’de gerçekten var olmayan, ama CSS ile eklenen sahte elemanlardır.)*/
+.faq.active::before, 
 .faq.active::after {
     content: '\f075'; 
     font-family: 'Font Awesome 5 Free';
