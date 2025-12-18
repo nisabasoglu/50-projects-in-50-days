@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  background-color: #CBCBCB;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.key{
+    border: 1px solid #999;
+    border-radius: 4px;
+    background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    flex-direction: column;
+    margin: 10px;
+    min-width: 150px;
+    position: relative;
+}
+
+.key small {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    text-align: center;
+    width: 100%;  /* width: 100% ekleyince small elementi parent kadar genişliğe sahip olur, text-align: center da yazıyı bu alanın ortasına yerleştirir. */
+    color: #555;
+    font-size: 14px;
+}
+
