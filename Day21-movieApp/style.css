@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,400&display=swap");
+
+:root {
+    --primary-color: #121212;
+    --secondary-color: #444444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+  margin: 0;
+}
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end; /* Öğeler sağa yaslanır */
+    background-color: transparent;
+}
+
+.search {
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color:var(--secondary-color);
+}
+
+.search::placeholder {
+    color: var(--secondary-color);
+}
+
+.search:focus {
+    outline: none;
+    background-color: var(--primary-color);
+    border: 2px solid #F97642;
+    color: #F97642;
+}
+
+/* 
+: → Pseudo-class -> Bir durumu temsil eder, eleman seçilmiştir ama DOM’da yeni bir parça oluşturmaz
+:hover
+:active
+:focus
+:checked
+:first-child
+
+:: → Pseudo-element -> Elemanın içindeki sanal bir parçayı hedefler,gerçekte HTML’de yoktur ama varmış gibi davranır
+::before
+::after
+::first-letter
+::first-line
+::selection
+*/
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie {
+    width: 300px;
+    margin: 1rem;
+    border: 2px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.movie img {
+    width: 100%; 
+}
+
+.movie-info {
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem; /* TOP | RIGHT-LEFT | BOTTOM */
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+    margin-top: 0;
+}
+
+.movie-info span {
+    background-color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green {
+    color: rgb(5, 171, 5);
+}
+
+.movie-info span.orange {
+    color: orange;
+}
+
+.movie-info span.red {
+    color: red;
+}
+
+.overview {
+    background-color: #F97642;
+    color: black;
+    padding: 2rem;
+    position: absolute; /* absolute ile elemanı alta yapıştır + yatayda tam yay */
+    left: 0;  
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%); /* yani aşağı itti bu sayede overview kısmı gözükmüyor şuan
+     */
+    transition: transform 0.3s ease;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+}
