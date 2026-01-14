@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,400&display=swap");
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-position: center center;  /* yatayda ve dikeyde ortalar */
+  background-size: cover; /* Resim, elemanın tamamını kaplayacak şekilde büyütülür.En-boy oranı bozulmaz.Taşan kısımlar kırpılır */
+  transition: 0.4s;
+}
+
+body::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1; /* bunu kullanabilmek için position ı kullanmış olmam lazım (body içindeki diğer içeriklerin ARKASINA atılıyor burda)*/
+}
+
+.slider-container {
+    height: 70vh;
+    width: 70vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: -15vh;
+    left: -15vw;
+    transition: 0.4s ease;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.arrow {
+    position: fixed; /* Sayfa aşağı–yukarı kaydırılsa bile aynı yerde kalır. */
+    color: white;
+    background-color: transparent;
+    padding: 20px;
+    font-size: 30px;
+    border: 2px solid white;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.arrow:focus {
+    outline: 0;
+}
+
+.left-arrow {
+    left: calc(15vw - 65px);
+}
+
+.right-arrow {
+    right: calc(15vw - 65px);
+}
+
+
+/* 
+
+|----15vw----|==== 70vw slider ====|----15vw----|
+
+15vw: Slider’ın sol (veya sağ) kenarının ekrana uzaklığı
+65px: Arrow’un yarı genişliği + padding + border
+
+Görsel olarak ortalamak için çıkarılıyor
+
+*/
