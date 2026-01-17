@@ -61,6 +61,7 @@ body {
     position: relative;
     width: 200px;
     height: 200px;
+    border-radius: 100%;
     background-color: #f0f0f0;
 }
 /* relative referans sağlar, absolute o referansa göre yerleşir.
@@ -74,6 +75,7 @@ eğer relative yoksa body e göre konumlanır */
     height: 65px;
     width: 3px;
     transform-origin: bottom center; /* alt orta nokta */
+    transition: all 0.5s ease-in;
 }
 
 .needle.hour {
