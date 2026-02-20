@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ecf0f1;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 350px;
+}
+
+.card-header {
+  height: 200px;
+}
+
+.card-header img {
+  object-fit: cover; /* İçerik, bulunduğu kutuyu (container'ı) oranını bozmadan tamamen doldursun. */
+  height: 100%;
+  width: 100%;
+}
+
+.card-content {
+  background-color: #fff;
+  padding: 30px;
+}
+
+.card-title {
+  height: 20px;
+  margin: 0;
+}
+
+.card-excerpt {
+  color: #777;
+  margin: 10px 0 20px; /* top  right/left  bottom; */
+}
+
+.author {
+  display: flex;
+}
+
+.profile-img {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 40px;
+  width: 40px;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Elemanlar arasında ve kenarlarda eşit boşluk bırakır. */
+  margin-left: 10px;
+  width: 100px;
+}
+
+.author-info small {
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.animated-bg {
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 10%,
+    #f6f7f8 20%,
+    #f6f7f8 100%
+  );
+    /* Bu arka plana bir yatay gradient koyuyor.
+    Soldan sağa:
+        Açık gri
+        Biraz koyu gri
+        Tekrar açık gri
+        Bu yapı ortada bir “ışık şeridi” oluşturur. 
+    */
+
+  background-size: 200% 100%;
+  /* arka plan = elementin 2 katı genişlikte olsun */
+
+  animation: bgPos 1s linear infinite;
+}
+
+.animated-bg-text {
+    border-radius: 50px;
+    display: inline-block; /* Span gibi inline bir elemente:
+ width ve height verebilmek için kullanılır.Normal span’a height veremezsin.Ama inline-block yaparsan verebilirsin. */
+    margin: 0;
+    height: 10px;
+    width: 100%;
+}
+
+@keyframes bgPos {
+    0% {
+        background-position: 50% 0;
+    }
+
+    100% {
+        background-position: -150% 0;
+    }
+
+    /* 
+    Neden 50% → -150% ?
+    Çünkü:
+        Background %200 genişlikte
+        Şeridi tamamen ekrandan geçirmen lazım
+        O yüzden 0 → -100 değil
+        Daha fazla kaydırıyoruz ki tam geçiş efekti oluşsun
+
+
+
+    background-position: X Y;
+        X → yatay konum
+        Y → dikey konum
+        50% demek:
+        Arka planın ortası, elementin ortasına hizalansın.
+        Yani başlangıçta shimmer ışık ortada başlıyor.
+    */
+}
