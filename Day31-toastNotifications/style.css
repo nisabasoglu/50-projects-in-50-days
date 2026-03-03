@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rebeccapurple;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.btn {
+  background-color: #ffffff;
+  color: rebeccapurple;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:focus {
+    outline:none
+}
+
+.btn:active {
+    transform: scale(0.98); /* Yani buton tıklandığı anda %2 oranında küçülür. */
+}
+/* 
+:hover (Üzerine Gelme) -> Bu durum, kullanıcı farenin imlecini bir öğenin üzerine getirdiğinde tetiklenir.
+
+:focus (Odaklanma) -> Bu durum, bir öğe seçildiğinde (odaklandığında) tetiklenir. Bu genellikle bir kullanıcı bir input alanına tıkladığında veya klavyedeki "Tab" tuşuyla öğeler arasında gezindiğinde gerçekleşir.
+
+Durum	Ne Anlama Gelir?	                    Ne Kadar Sürer?
+:focus	"Şu an bu öğeyi seçtim/üzerindeyim."	Sen başka bir yere tıklayana kadar kalır.
+:active	"Şu an bu öğeye tıklıyorum (basıyorum)."	Sadece fareye bastığın sürece (tık anında) sürer.
+*/
+
+#toasts {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.toast {
+    background-color: white;
+    color: rebeccapurple;
+    border-radius: 5px;
+    padding: 1rem 1.2rem;
+    margin: 0.5rem;
+}
+
+.toast.info {
+    color: rebeccapurple;
+}
+
+.toast.success {
+    color: green;
+}
+
+.toast.error {
+    color: red;
+}
