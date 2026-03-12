@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #a3d1ef;
+  font-family: "Datatype", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+
+
+/* position: absolute — elementi normal akıştan çıkarır, en yakın position: relative/absolute/fixed olan üst elemana göre konumlandırır. Eğer böyle bir üst eleman yoksa <body>'e göre konumlanır. */
+div {
+    background-color: #6a8ca2;
+    position: absolute;
+    bottom: 20px; /* sayfanın (ya da üst elemanın) altından 20px yukarıya yerleştirir. */
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+input {
+    width: 50px;
+    padding: 5px;
+    font-size: 18px;
+    background-color: #a3d1ef;
+    border: none;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
