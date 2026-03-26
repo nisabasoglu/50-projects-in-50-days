@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #DDF6D2;
+  font-family: "Datatype", sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 10px;
+}
+
+h2 {
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.container {
+    background-color: #82a371;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    padding: 20px;
+    width: 350px;
+    max-width: 100%;
+    border-radius: 2px;
+}
+
+.result-container {
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 12px 10px;
+    height: 50px;
+    width: 100%;
+}
+
+.result-container #result {
+    word-wrap: break-word; /*  bir kelime satıra sığmadığında onu ortadan bölerek alt satıra taşır. */
+    max-width: calc(100% - 40px);
+}
+
+.result-container .btn {
+    position: absolute;
+    right: 5px;
+    border-radius: 6px;
+    font-size: 20px;
+}
+
+.btn {
+    border: none;
+    background-color: #DDF6D2;
+    color: #82a371;
+    font-size: 16px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.btn-large {
+    display: block;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+
+}
+
+span {
+    color: black;
+}
+
+input:focus {
+    outline: none;
+}
+
