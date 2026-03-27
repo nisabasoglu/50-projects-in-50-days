@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 200px;
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.label {
+    background-color: #d0d0d0;
+    position: relative;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block; /* label bir inline element olduğu için width ve height veremezsin, o yüzden inline-block olarak güncelledim  */
+    margin: 0 15px 0;
+    width: 80px;
+    height: 40px;
+}
+
+
+.toggle:checked + .label {  /* "Toggle kutusu işaretlendiğinde, onun hemen yanındaki label elementine şu stilleri uygula." */
+    background-color: #a3b7d3;
+}
+
+.ball {
+    background: #fff;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    align-items: center;
+    justify-content: center; 
+    animation: slideOff 0.3s linear forwards; /* forwards: Animasyon bittiğinde elementin en son ulaştığı karedeki halinde kalmasını sağlar. */
+}
+
+.toggle:checked + .label .ball {
+    animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+    50% {
+        transform: translateX(20px) scale(1.1);
+    }
+    100% {
+        transform: translateX(40px) scale(1);
+    }
+}
+
+/* 
+.label (Dış Kutu) genişliği: 80px
+.ball (İçteki Top) genişliği: 34px
+
+80 - 34 = 46
+46px(boş alan) - 3px(sağdaki hedef boşluk) - 3px(soldaki var olan boşluk) = 40px
+*/
+
+@keyframes slideOff {
+    0% {
+        transform: translateX(40px) scale(1);
+    }
+    50% {
+        transform: translateX(20px) scale(1.1);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
