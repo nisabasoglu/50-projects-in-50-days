@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+}
+
+.square {
+    background-color: #1d1d1d;
+    height: 16px;
+    width: 16px;
+    margin: 2px;
+    transition: 2s ease; /* herhangi bir CSS özelliği değiştiğinde bu değişim 2 saniyede, ease eğrisiyle animasyonlu gerçekleşir. */
+}
+
+.square:hover {
+    transition-duration: 0s; /* Mouse üzerine gelince geçiş süresi anında sıfırlanır — yani hover efekti gecikme olmadan hemen uygulanır. */
+}
