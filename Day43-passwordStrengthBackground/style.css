@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.background {
+    background: url("https://i.pinimg.com/1200x/cc/18/70/cc18701f93a81c91942a3bd240ddcf04.jpg") no-repeat center center/cover;
+    position: absolute;
+    top: -20px;
+    bottom: -20px;
+    left: -20px;
+    right: -20px;
+    z-index: -1;
+    filter: blur(20px); /* bir elementin görüntüsünü bulanıklaştırır. */
+}
+
+
+
